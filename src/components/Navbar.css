@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
+  height: 60px;
+  background-color: #1a1a2e;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0; /* make sure it starts from left */
+  width: 100vw; /* ensures full width without overflow */
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow: hidden; /* hides both x and y overflow */
+}
+
+.nav-left .brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #f39c12;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.nav-right {
+  margin-left: auto;
+  overflow: hidden;
+}
+
+.nav-right .nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap; /* prevent breaking */
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1em;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links li a:hover {
+  color: #f39c12;
+}
