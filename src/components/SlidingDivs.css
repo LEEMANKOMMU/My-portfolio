@@ -42,27 +42,27 @@
 /* Center photo - shift left and go behind text */
 .center-photo {
   position: absolute;
-  top: 50px; 
-  /* Adjusted to align with the left-content */
+  top: 0;
   left: 0;
-  height: 100%;
+  height: 100vh;
+  width: 100%;
   z-index: 0; /* Behind the left-content */
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: flex-end; /* Align image to bottom */
+  justify-content: flex-start; /* Push image to left */
   opacity: 0;
   animation: photoEnter 2s ease-out forwards;
+  overflow: hidden;
 }
 
 .center-photo img {
   height: 100vh;
   width: auto;
-  top: 50px;
-  margin-left: 200px;
-  padding-left: 0px;
-
   object-fit: contain;
+  margin-left: 200px; /* Adjust how much it pushes to the right */
+  max-width: none;
 }
+
 
 
 /* Right side with intro */
@@ -115,6 +115,100 @@
 
 .social-icons a:hover {
   color: #f39c12;
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width: 1024px) {
+  .left-content {
+    padding-left: 40px;
+    margin-right: 0;
+  }
+
+  .center-photo img {
+    margin-left: 100px;
+    height: 80vh;
+  }
+
+  .right-content {
+    margin-left: 100px;
+    padding-right: 20px;
+  }
+
+  .name {
+    font-size: 2.5em;
+  }
+
+  .intro-text h5 {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+    padding: 100px 5% 40px;
+  }
+
+  .left-content,
+  .right-content {
+    padding: 0;
+    margin: 0;
+    flex: none;
+    width: 100%;
+    animation: none;
+    opacity: 1;
+  }
+
+  .name {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .center-photo {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    opacity: 1;
+    animation: none;
+  }
+
+  .center-photo img {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  .right-content {
+    margin-top: 20px;
+    animation: none;
+  }
+
+  .intro-text p {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 1.7em;
+  }
+
+  .intro-text h5 {
+    font-size: 1em;
+  }
+
+  .center-photo img {
+    max-width: 250px;
+  }
 }
 
 /* Animations */
@@ -330,7 +424,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background: #0d0221;
+  background: #1a1a2e;
   padding: 60px 20px;
   color: white;
   gap: 30px;
@@ -464,7 +558,7 @@
 
 
 .education-section {
-  background: #1a1a2e;
+  background: #0d0221;
   padding: 80px 5%;
   color: white;
   text-align: center;

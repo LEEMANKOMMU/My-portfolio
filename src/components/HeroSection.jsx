@@ -140,7 +140,7 @@ const HeroSection = () => {
       }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <img src="/profile.jpg" alt="Profile" />
+      <img src="./profile.jpg" alt="Profile" />
     </motion.div>
   </div>
 </motion.div>
